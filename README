@@ -7,28 +7,32 @@
 
 This is the buildsystem for the OpenWrt Linux distribution.
 
-To build your own firmware you need a Linux, BSD or MacOSX system (case
-sensitive filesystem required). Cygwin is unsupported because of the lack
-of a case sensitive file system.
+DO NOT USE root USER FOR COMPILING !!!
 
-You need gcc, binutils, bzip2, flex, python, perl, make, find, grep, diff,
-unzip, gawk, getopt, subversion, libz-dev and libc headers installed.
+Ubuntu 64bit (Ubuntu 18.04.6 LTS is recommended)
 
-1. Run "./scripts/feeds update -a" to obtain all the latest package definitions
-defined in feeds.conf / feeds.conf.default
+sudo apt update
+sudo apt install git gcc flex python2.7 make gawk subversion zlib1g-dev libncurses5-dev g++-multilib libelf-dev
 
-2. Run "./scripts/feeds install -a" to install symlinks for all obtained
-packages into package/feeds/
+git clone https://github.com/dingyiqq/openwrt-n1.git
+cd openwrt-n1
+export GIT_SSL_NO_VERIFY=1
+./scripts/feeds update -a
+./scripts/feeds install -a
+make menuconfig
+make -j8 download V=s
+make V=s -j5
 
-3. Run "make menuconfig" to select your preferred configuration for the
-toolchain, target system & firmware packages.
+git pull
+./scripts/feeds update -a
+./scripts/feeds install -a
+make defconfig
+make -j8 download V=s
+make V=s -j5
 
-4. Run "make" to build your firmware. This will download all sources, build
-the cross-compile toolchain and then cross-compile the Linux kernel & all
-chosen applications for your target system.
+rm -rf ./tmp && rm -rf .config
+make menuconfig
+make V=s -j5
 
-Sunshine!
-	Your OpenWrt Community
-	http://www.openwrt.org
-
+./scripts/feeds clean
 
