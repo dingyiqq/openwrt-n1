@@ -37,6 +37,7 @@ tools-$(BUILD_B43_TOOLS) += b43-tools
 tools-$(BUILD_ISL) += isl
 tools-$(CONFIG_USE_SPARSE) += sparse
 tools-$(CONFIG_TARGET_apm821xx) += genext2fs
+tools-y += ucl upx
 
 # builddir dependencies
 $(curdir)/bison/compile := $(curdir)/flex/compile
@@ -75,6 +76,7 @@ $(curdir)/zlib/compile := $(curdir)/cmake/compile
 $(curdir)/wrt350nv2-builder/compile := $(curdir)/zlib/compile
 $(curdir)/lzma-old/compile := $(curdir)/zlib/compile
 $(curdir)/make-ext4fs/compile := $(curdir)/zlib/compile
+$(curdir)/upx/compile := $(curdir)/ucl/compile
 
 ifneq ($(HOST_OS),Linux)
   tools-y += coreutils
