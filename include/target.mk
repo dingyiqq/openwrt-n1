@@ -17,6 +17,7 @@ DEFAULT_PACKAGES:=base-files block-mount busybox dropbear fstools htop libc libg
 zoneinfo-asia kmod-fs-ext4 kmod-fs-vfat kmod-nls-cp936 kmod-usb2 kmod-usb-core kmod-usb-storage kmod-scsi-core kmod-tcp-bbr luci-proto-ipv6 \
 luci-mod-admin-full luci-app-ddns luci-app-fileassistant luci-app-firewall luci-app-frpc luci-app-frps luci-app-samba luci-app-ttyd luci-app-wireguard \
 luci-app-wolplus luci-theme-bootstrap
+# ppp ppp-mod-pppoe luci-proto-ppp brcmfmac-firmware-43430-sdio kmod-brcmfmac libiwinfo-lua hostapd hostapd-common kmod-usb-net kmod-usb-net-asix-ax88179
 # For nas targets
 DEFAULT_PACKAGES.nas:=block-mount fdisk lsblk mdadm
 # For router targets
