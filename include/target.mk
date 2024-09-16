@@ -13,7 +13,7 @@ __target_inc=1
 DEVICE_TYPE?=router
 
 # Default packages - the really basic set
-DEFAULT_PACKAGES:=base-files block-mount busybox dropbear fstools htop libc libgcc logd mtd netifd opkg uci uclient-fetch uhttpd \
+DEFAULT_PACKAGES:=base-files block-mount busybox dropbear fstools haveged htop libc libgcc logd mtd netifd opkg uci uclient-fetch uhttpd \
 zoneinfo-asia kmod-fs-ext4 kmod-fs-vfat kmod-nls-cp936 kmod-usb2 kmod-usb-core kmod-usb-storage kmod-scsi-core kmod-tcp-bbr luci-proto-ipv6 \
 luci-mod-admin-full luci-app-ddns luci-app-fileassistant luci-app-firewall luci-app-frpc luci-app-frps luci-app-samba luci-app-ttyd luci-app-wireguard \
 luci-app-wolplus luci-theme-bootstrap
